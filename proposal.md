@@ -8,17 +8,14 @@ University of Winnipeg Collegiate
 
 **1. Introduction and Motivation - R**
 
-This project is for
-
-- motivation is kind of like the game of life and other board games.
-
-- we want to make a game for all those people bored of the general board
-  games (pun intended)
-
-- and for the people who don't have anyone to play with cuz u can play
-  this game alone
-
-- our game has fun interactive pop-ups
+This project is inspired by the game of life and other board games. The
+motivation behind this game is to create an engaging experience for
+people who feel bored with traditional board games or don\'t have anyone
+to play with. Our game aims to provide a fun, interactive experience
+that can be played solo, making it accessible to everyone, whether they
+have friends to play with or not. Additionally, the game will feature
+interactive pop-ups that enhance the gameplay experience, adding
+excitement and unpredictability to each turn.
 
 **2. Background and Related Work - J**
 
@@ -28,8 +25,10 @@ This project is for
 
 **3. Problem Statement - R**
 
-We aim to make a fun game for any bored individuals in the age group of
-7-19 to play in their free time.
+Our goal is to design and develop a fun, engaging board game that
+targets individuals aged 7-19. We aim to deliver a game that is simple
+to understand yet filled with enjoyable surprises, challenges, and
+interactive elements to keep players entertained during their free time.
 
 **4. Proposed Solution Strategy and Implementation - J**
 
@@ -38,9 +37,12 @@ We want a sandy colored game board and a light blue background.
 
 // We still need to implement:
 
-// 1. P
+// 1. Player animation and refinement. We want the players, after
+rolling the die/ spinning the spinner to actually have an animation of
+moving the appropriate number of spaces in accordance with the number
+they spun/rolled.
 
-// 2. Random spinners
+// 2. We want a
 
 // 3. Action cards with logic (similar to Life game cards)
 
@@ -108,46 +110,74 @@ Reference materials
 
 **6. Timeline of Activities - R**
 
-  ----------------------------------------------------------------------------
-           **Activity**           **Programmer**   **Start       **End Time**
-                                                   Time**        
-  ------------------------------- ---------------- ------------- -------------
-  Make Board/Background for game  Jolomi           January 16    January 21
-
-           Make players           Ruhani           January 16    January 21
-
-     Make spinner and players     Ruhani           January 16    January 21
-    automatically move from the                                  
-              spinner                                            
-
-  Make players be animated while  Jolomi           January 21    January 30
-              moving                                             
-
-     Make stop signs where the    Jolomi           January 21    January 30
-         player will stop                                        
-
-       Add background music       Jolomi                         February 4
-
-   Make the instructions show up  Ruhani                         February 11
-   at the beginning of the game                                  
-
-   Make an animation for the end  Jolomi                         February 11
-            of the game                                          
-
-  Make action cards pop up at the Ruhani                         February 18
-   stop signs, randomized (make                                  
-      sure they don't repeat)                                    
-
-        Design action cards       Jolomi                         February 25
-
-   Make action cards, with good   Both                           March 4
-    design, and fun activities                                   
-
-  Make a few minigames for inside Both of us will                March 11
-         the action cards         make 1-2 each                  
-
-                                                                 
-  ----------------------------------------------------------------------------
++------------------------------+----------------+------------+------------+
+| **Activity**                 | **Programmer** | **Start    | **End      |
+|                              |                | Time**     | Time**     |
++:============================:+================+============+============+
+| Create the game board and    | Jolomi         | January 16 | January 21 |
+| background elements          |                |            |            |
+| (sandy-colored board, light  |                |            |            |
+| blue background)             |                |            |            |
++------------------------------+----------------+------------+------------+
+| Design and implement players | Ruhani         | January 16 | January 21 |
+| and their starting positions |                |            |            |
++------------------------------+----------------+------------+------------+
+| Develop the spinner          | Ruhani         | January 16 | January 21 |
+| mechanics and link them to   |                |            |            |
+| player movement              |                |            |            |
++------------------------------+----------------+------------+------------+
+| Implement player animations  | Jolomi         | January 21 | January 30 |
+| for movement on the board    |                |            |            |
++------------------------------+----------------+------------+------------+
+| Set up stop signs on the     | Jolomi         | January 21 | January 30 |
+| board where players will     |                |            |            |
+| land and stop                |                |            |            |
++------------------------------+----------------+------------+------------+
+| Integrate background music   | Jolomi         | January 21 | February 4 |
+| and sound effects for better |                |            |            |
+| immersion                    |                |            |            |
++------------------------------+----------------+------------+------------+
+| Design and implement the     | Ruhani         | January 23 | February   |
+| instructions screen that     |                |            | 11         |
+| appears at the beginning of  |                |            |            |
+| the game                     |                |            |            |
++------------------------------+----------------+------------+------------+
+| Make an animation/display    | Jolomi         | January 28 | February   |
+| for the end of the game      |                |            | 11         |
++------------------------------+----------------+------------+------------+
+| Develop the animation for    | Ruhani         | January 30 | February   |
+| action cards, ensuring they  |                |            | 18         |
+| are randomized and do not    |                |            |            |
+| repeat                       |                |            |            |
++------------------------------+----------------+------------+------------+
+| Design visually appealing    | Jolomi         | January 30 | February   |
+| action cards and their       |                |            | 25         |
+| mechanics                    |                |            |            |
++------------------------------+----------------+------------+------------+
+| Make action cards, with good | Both           | February 6 | March 4    |
+| design, and fun activities   |                |            |            |
++------------------------------+----------------+------------+------------+
+| Design and integrate         | Both of us     | February   | March 11   |
+| mini-games that will appear  | will make 1-2  | 13         |            |
+| within the action cards      | each           |            |            |
++------------------------------+----------------+------------+------------+
+| User testing and debugging   |   ------       |   -------  | March 18   |
+| (playtesting to ensure       |   Both         |   March    |            |
+| smooth gameplay and fix      |   ------       |   11       |            |
+| issues)                      |                |   -------  |            |
+|                              |   ------       |            |            |
+|                              |                |   -------  |            |
+|                              |                |            |            |
+|                              |                |   --       |            |
+|                              |                |            |            |
+|                              |                |   --       |            |
++------------------------------+----------------+------------+------------+
+| Final polish of game design, | Both           | March 18   | March 25   |
+| UI, and UX improvements      |                |            |            |
++------------------------------+----------------+------------+------------+
+| Game launch and presentation | Both           | March 18   | March 25   |
+| preparation                  |                |            |            |
++------------------------------+----------------+------------+------------+
 
 **7. Expected Outcome - R**
 
