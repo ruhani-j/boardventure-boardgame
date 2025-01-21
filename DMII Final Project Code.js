@@ -1,22 +1,6 @@
 function setup() {
 
-createCanvas(400, 400);
-
-}
-
-function draw() {
-
-background(220)
-
-// make grid lines -sky blueish background and grid lines darker blue
-
-// sandy beige pathway with red stop signs
-
-// pathway needs boundaries
-
-function setup() {
-
-createCanvas(500, 400);
+createCanvas(450, 400);
 
 }
 
@@ -24,74 +8,105 @@ function draw() {
 
 background('skyblue');
 
+// make grid lines - sky blueish background and grid lines darker blue
+
+// sandy beige pathway with red stop signs
+
+// Grid layout (for visualizing the board)
+
 strokeWeight(2);
 
-fill(246,215,176)
+fill(246, 215, 176); // Sandy beige pathway color
 
-stroke(62, 103, 214)
+stroke(62, 103, 214); // Darker blue for grid lines
 
-square(370,50,60);
+// Draw grid squares (6x6 grid)
 
-square(310,50,60);
+square(370, 50, 60);
 
-square(250,50,60);
+square(310, 50, 60);
 
-square(190,50,60);
+square(250, 50, 60);
 
-square(130,50,60);
+square(190, 50, 60);
 
-square(70,50,60);
+square(130, 50, 60);
 
-square(10,50,60);
+square(70, 50, 60);
 
-square(10,110,60);
+square(10, 50, 60);
 
-square(10,170,60);
+square(10, 110, 60);
 
-square(70,170,60);
+square(10, 170, 60);
 
-square(130,170,60);
+square(70, 170, 60);
 
-square(190,170,60);
+square(130, 170, 60);
 
-square(250,170,60);
+square(190, 170, 60);
 
-square(310,170,60);
+square(250, 170, 60);
 
-square(370,170,60);
+square(310, 170, 60);
 
-square(370,230,60);
+square(370, 170, 60);
 
-square(370,290,60);
+square(370, 230, 60);
 
-square(310,290,60);
+square(370, 290, 60);
 
-square(250,290,60);
+square(310, 290, 60);
 
-square(190,290,60);
+square(250, 290, 60);
 
-square(130,290,60);
+square(190, 290, 60);
 
-square(70,290,60);
+square(130, 290, 60);
 
-square(10,290,60);
+square(70, 290, 60);
 
-noStroke()
+square(10, 290, 60);
 
-fill('black')
+// Add player markers, colors, and more gameplay elements here later.
 
-text('START',375,85)
+// Text for "START" and "FINISH"
 
-text('FINISH',15,325)
+noStroke();
+
+fill('black');
+
+text('START', 380, 85);
+
+text('FINISH', 20, 325);
+
+// Additional game mechanics and player actions will be added here
+later.
 
 }
 
-I made a very basic game board the should be a good base to start off
-of.
+// The setup and draw functions currently handle the game board
+rendering.
+
+// We still need to implement:
+
+// 1. Players and their movement
+
+// 2. Random spinners
+
+// 3. Action cards with logic (similar to Life game cards)
+
+// 4. Money tracking for players
+
+// 5. Game-ending conditions
+
+// Jolomi:
 
 // make players
 
 // background music
+
+// Ruhani:
 
 // make logic for random spinners
 
@@ -109,7 +124,3 @@ cards
 // have the players current money total in a designated place
 
 // repeat until game ends
-
-// make
-
-}
