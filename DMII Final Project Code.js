@@ -1,126 +1,227 @@
+const squareSize = 60; // square size
+
+let numPlayers = 0; // num of players
+
+let currentPlayer = 0; // current player index
+
+let spinnerResult = 0; // spinner result
+
+let playerPositions = [0, 0, 0, 0]; // player positions
+
+let actionCardVisible = false; // action card visibility
+
+let spinnerDisplay = ""; // spinner display
+
+// grid layout
+
+const squares = [
+
+{ x: 370, y: 50 }, { x: 310, y: 50 }, { x: 250, y: 50 }, { x: 190, y: 50
+}, { x: 130, y: 50 }, { x: 70, y: 50 }, { x: 10, y: 50 },
+
+{ x: 10, y: 110 }, { x: 10, y: 170 }, { x: 70, y: 170 }, { x: 130, y:
+170 }, { x: 190, y: 170 }, { x: 250, y: 170 }, { x: 310, y: 170 }, { x:
+370, y: 170 },
+
+{ x: 370, y: 230 }, { x: 370, y: 290 }, { x: 310, y: 290 }, { x: 250, y:
+290 }, { x: 190, y: 290 }, { x: 130, y: 290 }, { x: 70, y: 290 }, { x:
+10, y: 290 }
+
+];
+
+// player colors
+
+const playerColors = ["blue", "red", "yellow", "green"];
+
 function setup() {
 
 createCanvas(450, 400);
+
+// player selection buttons
+
+let button1 = createButton("1 Player");
+
+button1.mousePressed(() => setPlayers(1));
+
+button1.position(20, 360);
+
+let button2 = createButton("2 Players");
+
+button2.mousePressed(() => setPlayers(2));
+
+button2.position(90, 360);
+
+let button3 = createButton("3 Players");
+
+button3.mousePressed(() => setPlayers(3));
+
+button3.position(170, 360);
+
+let button4 = createButton("4 Players");
+
+button4.mousePressed(() => setPlayers(4));
+
+button4.position(250, 360);
+
+window.playerButtons = [button1, button2, button3, button4];
+
+// spin button
+
+let spinButton = createButton("Spin");
+
+spinButton.mousePressed(spinSpinner);
+
+spinButton.position(375, 360);
 
 }
 
 function draw() {
 
-background('skyblue');
+background("skyblue");
 
-// make grid lines - sky blueish background and grid lines darker blue
+// draw board
 
-// sandy beige pathway with red stop signs
+drawBoard();
 
-// Grid layout (for visualizing the board)
+// draw players
 
-strokeWeight(2);
+for (let i = 0; i < numPlayers; i++) {
 
-fill(246, 215, 176); // Sandy beige pathway color
+let pos = playerPositions[i];
 
-stroke(62, 103, 214); // Darker blue for grid lines
+let x = squares[pos].x;
 
-// Draw grid squares (6x6 grid)
+let y = squares[pos].y;
 
-square(370, 50, 60);
+let offsetX = 0, offsetY = 0;
 
-square(310, 50, 60);
+// player offset positions
 
-square(250, 50, 60);
+if (i === 0) { offsetX = 45; offsetY = 45; }
 
-square(190, 50, 60);
+if (i === 1) { offsetX = 15; offsetY = 15; }
 
-square(130, 50, 60);
+if (i === 2) { offsetX = 15; offsetY = 45; }
 
-square(70, 50, 60);
+if (i === 3) { offsetX = 45; offsetY = 15; }
 
-square(10, 50, 60);
+fill(playerColors[i]);
 
-square(10, 110, 60);
-
-square(10, 170, 60);
-
-square(70, 170, 60);
-
-square(130, 170, 60);
-
-square(190, 170, 60);
-
-square(250, 170, 60);
-
-square(310, 170, 60);
-
-square(370, 170, 60);
-
-square(370, 230, 60);
-
-square(370, 290, 60);
-
-square(310, 290, 60);
-
-square(250, 290, 60);
-
-square(190, 290, 60);
-
-square(130, 290, 60);
-
-square(70, 290, 60);
-
-square(10, 290, 60);
-
-// Add player markers, colors, and more gameplay elements here later.
-
-// Text for "START" and "FINISH"
-
-noStroke();
-
-fill('black');
-
-text('START', 380, 85);
-
-text('FINISH', 20, 325);
-
-// Additional game mechanics and player actions will be added here
-later.
+ellipse(x + offsetX, y + offsetY, 20, 20);
 
 }
 
-// The setup and draw functions currently handle the game board
-rendering.
+// show spinner number
 
-// We still need to implement:
+if (spinnerDisplay !== "") {
 
-// 1. Players and their movement
+fill("black");
 
-// 2. Random spinners
+textSize(32);
 
-// 3. Action cards with logic (similar to Life game cards)
+text(spinnerDisplay, width / 2 - 20, height / 2);
 
-// 4. Money tracking for players
+}
 
-// 5. Game-ending conditions
+// show action card
 
-// Jolomi:
+if (actionCardVisible) {
 
-// make players
+fill(255);
 
-// background music
+rect(150, 100, 150, 100);
 
-// Ruhani:
+fill(0);
 
-// make logic for random spinners
+textSize(16);
 
-// when they enter the game, prompt how many players with buttons
+text("Action Card", 180, 150);
 
-// when they spin make the player move that many spaces
+}
 
-// when they land on a space, make action cards pop up
+// show start/finish
 
-// make action cards - approx 10 of them similar to game of life action
-cards
+noStroke();
 
-// then those action cards need logic to work
+fill("black");
 
-// have the players current money total in a designated place
+text("START", 380, 85);
 
-// repeat until game ends
+text("FINISH", 20, 325);
+
+// show current player
+
+textSize(16);
+
+text(`Player ${currentPlayer + 1} / ${playerColors[currentPlayer]}`, 20,
+370);
+
+}
+
+// set number of players
+
+function setPlayers(players) {
+
+numPlayers = players;
+
+playerPositions.fill(0, 0, numPlayers); // reset positions
+
+window.playerButtons.forEach(button => button.hide());
+
+}
+
+// spin the spinner
+
+function spinSpinner() {
+
+spinnerResult = Math.floor(random(1, 7));
+
+spinnerDisplay = spinnerResult;
+
+// move player
+
+playerPositions[currentPlayer] += spinnerResult;
+
+// keep players within bounds
+
+if (playerPositions[currentPlayer] >= squares.length) {
+
+playerPositions[currentPlayer] = squares.length - 1;
+
+}
+
+// action card on special squares
+
+if (playerPositions[currentPlayer] % 6 === 0) {
+
+actionCardVisible = true;
+
+}
+
+// move to next player
+
+currentPlayer = (currentPlayer + 1) % numPlayers;
+
+setTimeout(() => (spinnerDisplay = ""), 1000); // clear spinner
+
+actionCardVisible = false; // hide action card
+
+}
+
+// draw the grid
+
+function drawBoard() {
+
+strokeWeight(2);
+
+fill(246, 215, 176);
+
+stroke(62, 103, 214);
+
+squares.forEach((square) => {
+
+rect(square.x, square.y, squareSize, squareSize);
+
+});
+
+}
