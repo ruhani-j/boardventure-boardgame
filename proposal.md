@@ -8,14 +8,13 @@ University of Winnipeg Collegiate
 
 **1. Introduction and Motivation - R**
 
-This project is inspired by the game of life and other board games. The
-motivation behind this game is to create an engaging experience for
-people who feel bored with traditional board games or don\'t have anyone
-to play with. Our game aims to provide a fun, interactive experience
-that can be played solo, making it accessible to everyone, whether they
-have friends to play with or not. Additionally, the game will feature
-interactive pop-ups that enhance the gameplay experience, adding
-excitement and unpredictability to each turn.
+This project is inspired by the game of life and other board games we
+enjoy playing. The motivation behind this game is to create a fun online
+game for people who feel bored with traditional board games. Our game
+aims to provide a fun experience that is accessible to everyone.
+Additionally, the game will feature interactive pop-ups with mini-games
+that enhance the gameplay experience, adding excitement and
+unpredictability.
 
 **2. Background and Related Work - J**
 
@@ -32,55 +31,42 @@ interactive elements to keep players entertained during their free time.
 
 **4. Proposed Solution Strategy and Implementation - J**
 
-// The setup and draw functions will draw the game board and background.
-We want a sandy colored game board and a light blue background.
+The setup and draw functions will draw the game board and background. We
+want a sandy colored game board and a light blue background. This game
+will host up to four players. These players take turns spinning a wheel
+to determine how many spaces they move. Some spaces on the game board
+will have action cards that allow the player that landed on the space to
+play a mini game within the game separate from the other players. Upon
+completion of the mini-game the player that did the mini-game can get
+money/points based on their performance.
 
-// We still need to implement:
+**a. Player animation and refinement.**
 
-// 1. Player animation and refinement. We want the players, after
-rolling the die/ spinning the spinner to actually have an animation of
-moving the appropriate number of spaces in accordance with the number
-they spun/rolled.
+We want the players, after rolling the die/spinning the spinner to have
+an animation of moving the appropriate number of spaces in accordance
+with the number they spun/rolled.
 
-// 2. We want a
+**b. Action cards that appear once the player lands on certain tiles.**
 
-// 3. Action cards with logic (similar to Life game cards)
+These action cards give the player a specific task or mini-game when
+they land on specific tiles, the players must complete these mini games
+before moving on. We want these action cards to be a core part of the
+gameplay.
 
-// 4. Money tracking for players
+**c. Money tracking for players**
 
-// 5. Game-ending conditions
+A money/point tracking system needs to be implemented that gives the
+player a certain amount of money/points that's based upon their
+performance in the aforementioned mini games. The money they're rewarded
+will tie into the end of the game.
 
-// Jolomi:
+**d. Game-ending conditions**
 
-// make players
-
-// background music
-
-// Ruhani:
-
-// make logic for random spinners
-
-// when they enter the game, prompt how many players with buttons
-
-// when they spin make the player move that many spaces
-
-// when they land on a space, make action cards pop up
-
-// make action cards - approx. 10 of them like game of life action cards
-
-// then those action cards need logic to work
-
-// have the players current money total in a designated place
-
-// repeat until game ends
+The game will end when all players reach the final tile on the game
+board. The winner of the game is decided by whoever gains the most
+points/money by the time they reach the final tile.
 
 **5. Resource Requirements - J**
-
-Reference materials
-
-- Empty game board canvas found online.
-
-**Add more stuff plz**
 
 **a. Development Tools:**
 
@@ -105,7 +91,7 @@ Reference materials
 - We may need something like YouTube or some other learning resources as
   our current knowledge may not be sufficient for this project.
 
-- The use of Google or other such browsers to find additional
+- Google or other such search engines may be needed to find additional
   references.
 
 **6. Timeline of Activities - R**
@@ -204,9 +190,3 @@ game where:
 
 By implementing this project, we aim to demonstrate our understanding of
 what we have learned in our DMII class.
-
-**External Materials - J**
-
-Adobe Photoshop
-
-Extra mini games like snake
