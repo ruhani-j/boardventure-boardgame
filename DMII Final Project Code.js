@@ -8,24 +8,55 @@ let spinnerResult = 0; // spinner result
 
 let playerPositions = [0, 0, 0, 0]; // player positions
 
+let targetPositions = [0, 0, 0, 0]; // target positions for animation
+
+let playerOffsets = [
+
+{ x: 45, y: 45 },
+
+{ x: 15, y: 15 },
+
+{ x: 15, y: 45 },
+
+{ x: 45, y: 15 },
+
+]; // offsets for players
+
 let actionCardVisible = false; // action card visibility
 
 let spinnerDisplay = ""; // spinner display
+
+let animating = false; // to track if animation is in progress
+
+let animationStep = 0; // current animation step
+
+let totalSteps = 0; // total steps to move based on spinner result
+
+let lastMoveFrame = 0; // track last move frame
+
+const animationSpeed = 15; // delay between moves (higher value = slower
+movement)
 
 // grid layout
 
 const squares = [
 
 { x: 370, y: 50 }, { x: 310, y: 50 }, { x: 250, y: 50 }, { x: 190, y: 50
-}, { x: 130, y: 50 }, { x: 70, y: 50 }, { x: 10, y: 50 },
+},
 
-{ x: 10, y: 110 }, { x: 10, y: 170 }, { x: 70, y: 170 }, { x: 130, y:
-170 }, { x: 190, y: 170 }, { x: 250, y: 170 }, { x: 310, y: 170 }, { x:
-370, y: 170 },
+{ x: 130, y: 50 }, { x: 70, y: 50 }, { x: 10, y: 50 }, { x: 10, y: 110
+},
 
-{ x: 370, y: 230 }, { x: 370, y: 290 }, { x: 310, y: 290 }, { x: 250, y:
-290 }, { x: 190, y: 290 }, { x: 130, y: 290 }, { x: 70, y: 290 }, { x:
-10, y: 290 }
+{ x: 10, y: 170 }, { x: 70, y: 170 }, { x: 130, y: 170 }, { x: 190, y:
+170 },
+
+{ x: 250, y: 170 }, { x: 310, y: 170 }, { x: 370, y: 170 }, { x: 370, y:
+230 },
+
+{ x: 370, y: 290 }, { x: 310, y: 290 }, { x: 250, y: 290 }, { x: 190, y:
+290 },
+
+{ x: 130, y: 290 }, { x: 70, y: 290 }, { x: 10, y: 290 },
 
 ];
 
@@ -36,8 +67,6 @@ const playerColors = ["blue", "red", "yellow", "green"];
 function setup() {
 
 createCanvas(450, 400);
-
-// player selection buttons
 
 let button1 = createButton("1 Player");
 
@@ -65,8 +94,6 @@ button4.position(250, 360);
 
 window.playerButtons = [button1, button2, button3, button4];
 
-// spin button
-
 let spinButton = createButton("Spin");
 
 spinButton.mousePressed(spinSpinner);
@@ -79,31 +106,43 @@ function draw() {
 
 background("skyblue");
 
-// draw board
-
 drawBoard();
 
-// draw players
+// draw players with animation
 
 for (let i = 0; i < numPlayers; i++) {
 
 let pos = playerPositions[i];
 
+if (animating && i === currentPlayer) {
+
+let stepsLeft = totalSteps - animationStep;
+
+if (stepsLeft > 0 && frameCount - lastMoveFrame >= animationSpeed) {
+
+let nextPos = (pos + 1) % squares.length;
+
+playerPositions[i] = nextPos;
+
+animationStep++;
+
+lastMoveFrame = frameCount; // Update last move frame
+
+} else if (stepsLeft === 0) {
+
+animating = false;
+
+}
+
+}
+
 let x = squares[pos].x;
 
 let y = squares[pos].y;
 
-let offsetX = 0, offsetY = 0;
+let offsetX = playerOffsets[i].x;
 
-// player offset positions
-
-if (i === 0) { offsetX = 45; offsetY = 45; }
-
-if (i === 1) { offsetX = 15; offsetY = 15; }
-
-if (i === 2) { offsetX = 15; offsetY = 45; }
-
-if (i === 3) { offsetX = 45; offsetY = 15; }
+let offsetY = playerOffsets[i].y;
 
 fill(playerColors[i]);
 
@@ -139,17 +178,13 @@ text("Action Card", 180, 150);
 
 }
 
-// show start/finish
-
 noStroke();
 
 fill("black");
 
-text("START", 380, 85);
+text("START", 375, 85);
 
-text("FINISH", 20, 325);
-
-// show current player
+text("FINISH", 15, 325);
 
 textSize(16);
 
@@ -158,19 +193,17 @@ text(`Player ${currentPlayer + 1} / ${playerColors[currentPlayer]}`, 20,
 
 }
 
-// set number of players
-
 function setPlayers(players) {
 
 numPlayers = players;
 
-playerPositions.fill(0, 0, numPlayers); // reset positions
+playerPositions.fill(0, 0, numPlayers);
 
-window.playerButtons.forEach(button => button.hide());
+targetPositions.fill(0, 0, numPlayers);
+
+window.playerButtons.forEach((button) => button.hide());
 
 }
-
-// spin the spinner
 
 function spinSpinner() {
 
@@ -178,37 +211,41 @@ spinnerResult = Math.floor(random(1, 7));
 
 spinnerDisplay = spinnerResult;
 
-// move player
+let newPos = playerPositions[currentPlayer] + spinnerResult;
 
-playerPositions[currentPlayer] += spinnerResult;
+if (newPos >= squares.length) {
 
-// keep players within bounds
-
-if (playerPositions[currentPlayer] >= squares.length) {
-
-playerPositions[currentPlayer] = squares.length - 1;
+newPos = squares.length - 1;
 
 }
 
-// action card on special squares
+targetPositions[currentPlayer] = newPos;
 
-if (playerPositions[currentPlayer] % 6 === 0) {
+totalSteps = spinnerResult;
+
+animating = true;
+
+animationStep = 0;
+
+lastMoveFrame = frameCount; // Start animation timing
+
+if (newPos % 6 === 0) {
 
 actionCardVisible = true;
 
 }
 
-// move to next player
-
 currentPlayer = (currentPlayer + 1) % numPlayers;
 
-setTimeout(() => (spinnerDisplay = ""), 1000); // clear spinner
+setTimeout(() => {
 
-actionCardVisible = false; // hide action card
+spinnerDisplay = "";
+
+actionCardVisible = false;
+
+}, 1000);
 
 }
-
-// draw the grid
 
 function drawBoard() {
 
