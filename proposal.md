@@ -1,6 +1,10 @@
 **Digital Media II - 008**
 
-**Title of Project**
+**Boardventure: Spin, Play, Win**
+
+**Game Title: BoardRush**
+
+*BoardCraft Creations*
 
 **Ruhani Jindal &** Jolomi Eddi
 
@@ -12,7 +16,7 @@ This project is inspired by the game of life and other board games we
 enjoy playing. The motivation behind this game is to create a fun online
 game for people who feel bored with traditional board games. Our game
 aims to provide a fun experience that is accessible to everyone.
-Additionally, the game will feature interactive pop-ups with mini-games
+Additionally, the game will feature interactive pop-ups with mini games
 that enhance the gameplay experience, adding excitement and
 unpredictability.
 
@@ -20,7 +24,73 @@ unpredictability.
 
 **a. First Related Work:** Game of Life
 
+The Game of Life serves as a strong inspiration for this project due to
+its structured board game mechanics, player progression system, and
+emphasis on chance-based movement combined with strategic
+decision-making. Like *The Game of Life*, our game involves players
+taking turns, spinning a wheel to determine movement, and encountering
+spaces that impact their journey.
+
+One key similarity is the presence of **event-based spaces**. In *The
+Game of Life*, players land on spaces that trigger life events such as
+career changes, financial gains or losses, and other milestone moments.
+Similarly, our game will feature **action card spaces**, where players
+will engage in mini-games before proceeding. These action spaces
+introduce unpredictability and variation, making each playthrough
+unique.
+
+Another important parallel is the **currency or point-based progression
+system**. In *The Game of Life*, financial success is a major factor in
+determining the winner. Likewise, in our game, players will earn points
+or in-game currency based on their performance in mini-games. Rather
+than simply racing to the finish, success will depend on how well
+players perform throughout the game.
+
+Additionally, *The Game of Life* emphasizes **a blend of luck and player
+choice**. While movement is determined by chance (via the spinner), the
+outcomes of life events and financial decisions impact the final
+standings. Our game adopts a similar structure, where luck influences
+movement, but skill in mini-games determines overall success.
+
+By drawing inspiration from *The Game of Life's* turn-based structure,
+chance-based movement, and event-driven spaces, our game aims to provide
+an engaging and interactive experience while introducing dynamic
+mini-games and animations to set it apart.
+
 **b. Second Related Work/Inspiration:** Monopoly
+
+Monopoly serves as a key inspiration for this project due to its
+structured board game mechanics, player progression system, and
+strategic decision-making elements. Like Monopoly, our game involves
+players taking turns, moving across a game board based on a randomized
+movement mechanic (in our case, a spinning wheel rather than dice), and
+encountering specific spaces that impact their progress.
+
+One of the most significant similarities is the presence of **action
+spaces**---in Monopoly, players may land on properties, Chance or
+Community Chest cards, or other special tiles that require them to take
+an action. Similarly, in our game, action cards will introduce unique
+mini-games that players must complete, adding an element of
+unpredictability and engagement.
+
+Another parallel is the **currency system**. In Monopoly, players
+accumulate and manage money throughout the game, which determines their
+success. In our game, players will earn in-game currency or points based
+on their performance in mini-games, influencing the final outcome. This
+mechanic ensures that the winner is not simply the first player to reach
+the final tile but rather the one who has earned the most through skill
+and strategy.
+
+Additionally, Monopoly's **balance of luck and strategy** is reflected
+in our design. While movement is randomized, strategic decisions---such
+as how well a player performs in mini-games---will significantly impact
+their success. This blend of chance and skill makes for an engaging and
+competitive gameplay experience.
+
+By drawing inspiration from Monopoly's turn-based mechanics, action
+spaces, and money-based scoring system, our game seeks to create an
+exciting and interactive experience while introducing fresh elements
+such as animated movement and mini-games to differentiate itself.
 
 **3. Problem Statement - R**
 
@@ -31,40 +101,36 @@ interactive elements to keep players entertained during their free time.
 
 **4. Proposed Solution Strategy and Implementation - J**
 
-The setup and draw functions will draw the game board and background. We
-want a sandy colored game board and a light blue background. This game
-will host up to four players. These players take turns spinning a wheel
-to determine how many spaces they move. Some spaces on the game board
-will have action cards that allow the player that landed on the space to
-play a mini game within the game separate from the other players. Upon
-completion of the mini-game the player that did the mini-game can get
-money/points based on their performance.
+**a. Player Movement Animation**
 
-**a. Player animation and refinement.**
+To enhance the gameplay experience, an animation system will be
+implemented to visually represent player movement across the board. When
+a player spins the wheel, their game piece will move step-by-step across
+the appropriate number of spaces, ensuring a smooth and immersive
+transition.
 
-We want the players, after rolling the die/spinning the spinner to have
-an animation of moving the appropriate number of spaces in accordance
-with the number they spun/rolled.
+**b. Action Cards & Mini-Games**
 
-**b. Action cards that appear once the player lands on certain tiles.**
+Certain spaces on the board will feature action cards that trigger
+unique mini games. When a player lands on one of these spaces, they must
+complete the associated mini-game before proceeding. These mini games
+will serve as a core gameplay mechanic, adding variety and strategy to
+the experience.
 
-These action cards give the player a specific task or mini-game when
-they land on specific tiles, the players must complete these mini games
-before moving on. We want these action cards to be a core part of the
-gameplay.
+**c. Currency & Score Tracking System**
 
-**c. Money tracking for players**
+A point or currency system will be implemented to reward players based
+on their mini-game performance. This system will allow players to
+accumulate points, which will play a key role in determining the game's
+winner.
 
-A money/point tracking system needs to be implemented that gives the
-player a certain amount of money/points that's based upon their
-performance in the aforementioned mini games. The money they're rewarded
-will tie into the end of the game.
+**d. Game Conclusion & Winner Determination**
 
-**d. Game-ending conditions**
-
-The game will end when all players reach the final tile on the game
-board. The winner of the game is decided by whoever gains the most
-points/money by the time they reach the final tile.
+The game will conclude when all players reach the final tile on the
+board. At this stage, the player with the highest accumulated score or
+currency will be declared the winner. This scoring system ensures that
+success is based on both progress and performance throughout the
+game.le.
 
 **5. Resource Requirements - J**
 
@@ -72,17 +138,11 @@ points/money by the time they reach the final tile.
 
 - Programming Language: JavaScript
 
-- Integrated Development Environment (IDE): We can use Visual Studio
-  Code, PyCharm, Thonny, or any text editor that supports Python.
-
-- Version Control: GitHub will be used for version control, allowing us
-  to collaborate effectively and track changes made by each member.
-
 - Program: P5js, used as the website for us to make our code.
 
 **b. Hardware:**
 
-- A computer/laptop for each team member with Python installed.
+- A computer/laptop for each team member.
 
 - Access to the internet for research and collaboration.
 
