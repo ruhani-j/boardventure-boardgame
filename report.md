@@ -20,14 +20,14 @@ Final Project Report
 
 1.  **Introduction and Motivation**
 
-Change future tense to past tense throughout report
-
-This project is inspired by the game of life and other board games we
+This project was inspired by the game of life and other board games we
 enjoy playing. The motivation behind this game was to create a fun
-online game for people who feel bored with traditional board games. Our
-game aims to provide a fun experience that is accessible to everyone.
-The game is at a good level for us in terms of the coding and is
-aesthetically pleasing along with being functional.
+online game for people who feel bored with traditional board games. It
+evolved into becoming a game for people who want to play a board game
+without physical games with them. Our game aimed to provide a fun
+experience that is accessible to everyone. The game is at a good level
+for us in terms of the coding and is aesthetically pleasing along with
+being functional.
 
 2.  **Background and Related Works**
 
@@ -43,23 +43,23 @@ spaces that impact their journey.
 One key similarity is the presence of **event-based spaces**. In *The
 Game of Life*, players land on spaces that trigger life events such as
 career changes, financial gains or losses, and other milestone moments.
-Similarly, our game will feature **action card spaces**, where players
-will engage in mini-games before proceeding. These action spaces
-introduce unpredictability and variation, making each playthrough
-unique.
+Similarly, our game features **action card spaces**, where players
+engage in creative actions for an element of surprise in each turn.
+These action spaces introduce unpredictability and variation, making
+each playthrough unique.
 
 Another important parallel is the **currency or point-based progression
 system**. In *The Game of Life*, financial success is a major factor in
 determining the winner. Likewise, in our game, players will earn points
-or in-game currency based on their performance in mini-games. Rather
-than simply racing to the finish, success will depend on how well
-players perform throughout the game.
+or in-game currency based on their action cards. Rather than simply
+racing to the finish, success depends on how well players perform
+throughout the game.
 
 Additionally, *The Game of Life* emphasizes **a blend of luck and player
 choice**. While movement is determined by chance (via the spinner), the
 outcomes of life events and financial decisions impact the final
 standings. Our game adopts a similar structure, where luck influences
-movement, but skill in mini-games determines overall success.
+movement, but action cards determine overall success.
 
 By drawing inspiration from *The Game of Life's* turn-based structure,
 chance-based movement, and event-driven spaces, our game aims to provide
@@ -78,23 +78,21 @@ encountering specific spaces that impact their progress.
 One of the most significant similarities is the presence of **action
 spaces**---in Monopoly, players may land on properties, Chance or
 Community Chest cards, or other special tiles that require them to take
-an action. Similarly, in our game, action cards will introduce unique
-mini-games that players must complete, adding an element of
-unpredictability and engagement.
+an action. Similarly, in our game, action cards include actions that
+players must complete, adding an element of unpredictability and
+engagement.
 
 Another parallel is the **currency system**. In Monopoly, players
 accumulate and manage money throughout the game, which determines their
-success. In our game, players will earn in-game currency or points based
-on their performance in mini-games, influencing the final outcome. This
-mechanic ensures that the winner is not simply the first player to reach
-the final tile but rather the one who has earned the most through skill
-and strategy.
+success. In our game, players will earn in-game currency or points,
+influencing the final outcome. This mechanic ensures that the winner is
+not simply the first player to reach the final tile but rather the one
+who has earned the most through skill and strategy.
 
 Additionally, Monopoly's **balance of luck and strategy** is reflected
-in our design. While movement is randomized, strategic decisions---such
-as how well a player performs in mini-games---will significantly impact
-their success. This blend of chance and skill makes for an engaging and
-competitive gameplay experience.
+in our design. While movement is randomized, strategic decisions will
+significantly impact their success. This blend of chance and skill makes
+for an engaging and competitive gameplay experience.
 
 By drawing inspiration from Monopoly's turn-based mechanics, action
 spaces, and money-based scoring system, our game seeks to create an
@@ -110,9 +108,10 @@ interactive elements to keep players entertained during their free time.
 
 4.  **Solution Strategy and Implementation**
 
-Remove the whole thing with minigames everywhere
-
-Add how we implemented it like what steps we took
+For the game to feel complete and engaging, we implemented several key
+mechanics that work together to enhance the overall experience. Each
+part was designed to make the gameplay more interactive, rewarding, and
+enjoyable. The key sections of the implementation of our plan were:
 
 **a. Player Movement Animation**
 
@@ -126,8 +125,8 @@ transition.
 
 Certain spaces on the board will feature action cards with unique
 actions. When a player lands on one of these spaces, they must complete
-the associated mini game before proceeding. These mini games will serve
-as a core gameplay mechanic, adding variety and strategy to the
+the associated action, often automated, before proceeding. These actions
+serve as a core gameplay mechanic, adding variety and strategy to the
 experience.
 
 **c. Currency & Score Tracking System**
@@ -144,11 +143,7 @@ board. At this stage, the player with the highest accumulated score or
 currency will be declared the winner. This scoring system ensures that
 success is based on both progress and performance throughout the game.
 
-add more stuff but I think these can be good subsections
-
-these are the main components of what we did \^
-
-5.  **Experimental Framework**
+5.  **Experimental Framework - R**
 
 How did we approach the problem
 
@@ -156,9 +151,55 @@ How did we try to split up tasks vs how we ended up doing it
 
 Debugging took a lot of our time
 
+we originally had planned to make a more complex game with minigames
+embedded in the action cards and had planned to do different parts of
+the project. Our original timeline was quite different than what our
+timeline actuall ended up being. We had planned to have jolomi work on
+making the game more aesthetically pleasing and working on the visual
+components and Ruhani doing the core logic. However, we ended up
+splitting the tasks differently. It ended up being more of us making a
+list of things we needed to do and the elements we wanted in the game.
+Then, we took turns working on the code and doing work. The problem was,
+our style of writing code was quite different than each other. This
+ended up making our codes clash. The code started needing debugging
+everytime we added new components. This made the process of making the
+game logic more time taking than expected. It worked out in the end
+though. We ended up having a less complex game with a different style of
+action cards than we had planned. We made point cards, action cards with
+automated movements, etc. we did not end up making minigames though. It
+was simply going to take too much time. We considered making a game like
+snake, but eventually realized that game would that up more lines of
+code than our original board game. This made such ideas not feasible and
+not worth doing so. Idk make this into a paragraph type thing for the
+experimental framework in a way that it looks nice in a report.
+
 6.  **Timeline of Activities**
 
 Change this to make it more accurate to what we did
+
+Our actual thing ended up being more like this.
+
+Jolomi did Create the game board and background elements (sandy-colored
+board, light blue background) by jan 18
+
+Ruhani debugged jolomis work when it started crashing
+
+Ruhani did Design and implement players and their starting positions by
+jan 20
+
+Jan 20 ruhani Develop the spinner mechanics and link them to player
+movement
+
+Develop the spinner mechanics and link them to player movement
+
+Feb 18 Implement player animations for movement on the board jolomi
+
+Ruhani also did work on the action ards
+
+March beginning we both discussed things we should do further
+
+Idk make this into a timeline table thing. Below I have attached our
+original plan which you can use to format the final timeline.
 
 +-----------------------------------------+----------------+------------+
 | **Activity**                            | **Programmer** | **Start    |
@@ -221,9 +262,6 @@ Change this to make it more accurate to what we did
 | Game launch and presentation            | Both           | March 18   |
 | preparation                             |                |            |
 +-----------------------------------------+----------------+------------+
-| **Activity**                            | **Programmer** | **Start    |
-|                                         |                | Time**     |
-+-----------------------------------------+----------------+------------+
 | Create the game board and background    | Jolomi         | January 16 |
 | elements (sandy-colored board, light    |                |            |
 | blue background)                        |                |            |
@@ -252,7 +290,7 @@ We have made a fully functional board game where:
 By implementing this project, we have demonstrated our understanding of
 what we have learned in our DMII class.
 
-8.  **Conclusions and Future Work**
+8.  **Conclusions and Future Work - J**
 
 Options for our future work are more games
 
