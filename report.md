@@ -143,35 +143,31 @@ board. At this stage, the player with the highest accumulated score or
 currency will be declared the winner. This scoring system ensures that
 success is based on both progress and performance throughout the game.
 
-5.  **Experimental Framework - R**
+5.  **Experimental Framework**
 
-How did we approach the problem
+Our approach to this project evolved quite a bit from our original plan.
+Initially, we aimed to create a more complex game with embedded mini
+games within the action cards. We divided tasks early on, with Jolomi
+focusing on making the game visually appealing and working on the design
+components, while Ruhani worked on building the core game logic.
+However, as we progressed, we found this division didn\'t hold up. We
+ended up creating a list of all the essential features and elements we
+wanted in the game, and from there, we took turns tackling different
+tasks.
 
-How did we try to split up tasks vs how we ended up doing it
-
-Debugging took a lot of our time
-
-we originally had planned to make a more complex game with minigames
-embedded in the action cards and had planned to do different parts of
-the project. Our original timeline was quite different than what our
-timeline actuall ended up being. We had planned to have jolomi work on
-making the game more aesthetically pleasing and working on the visual
-components and Ruhani doing the core logic. However, we ended up
-splitting the tasks differently. It ended up being more of us making a
-list of things we needed to do and the elements we wanted in the game.
-Then, we took turns working on the code and doing work. The problem was,
-our style of writing code was quite different than each other. This
-ended up making our codes clash. The code started needing debugging
-everytime we added new components. This made the process of making the
-game logic more time taking than expected. It worked out in the end
-though. We ended up having a less complex game with a different style of
-action cards than we had planned. We made point cards, action cards with
-automated movements, etc. we did not end up making minigames though. It
-was simply going to take too much time. We considered making a game like
-snake, but eventually realized that game would that up more lines of
-code than our original board game. This made such ideas not feasible and
-not worth doing so. Idk make this into a paragraph type thing for the
-experimental framework in a way that it looks nice in a report.
+One major obstacle was that our coding styles differed significantly,
+leading to clashes between our code when integrating different parts.
+This resulted in constant debugging every time a new component was
+added, slowing down our progress. Debugging became one of the most
+time-consuming parts of our work. Eventually, we had to simplify our
+original concept, removing mini-games and focusing on making the core
+board game functional and fun. We experimented with ideas like
+integrating a snake-style mini-game but decided against it after
+realizing it would require more lines of code than the main game itself.
+In the end, we kept action cards with different types --- point cards,
+automated movement cards, and more --- to keep gameplay interesting
+without overcomplicating development. Despite the setbacks, we managed
+to finish with a working, enjoyable game.
 
 6.  **Timeline of Activities**
 
