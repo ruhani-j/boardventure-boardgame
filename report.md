@@ -131,17 +131,16 @@ experience.
 
 **c. Currency & Score Tracking System**
 
-A point or currency system will be implemented to reward players based
-on their mini-game performance. This system will allow players to
-accumulate points, which will play a key role in determining the game's
-winner.
+A point or currency system has been implemented to reward players based
+on their mini-game performance. This system allows players to accumulate
+points, which plays a key role in determining the game's winner.
 
 **d. Game Conclusion & Winner Determination**
 
-The game will conclude when all players reach the final tile on the
-board. At this stage, the player with the highest accumulated score or
-currency will be declared the winner. This scoring system ensures that
-success is based on both progress and performance throughout the game.
+The game ends when all players reach the final tile on the board. At
+this stage, the player with the highest accumulated score or currency
+will be declared the winner. This scoring system ensures that success is
+based on both progress and performance throughout the game.
 
 5.  **Experimental Framework**
 
@@ -171,99 +170,61 @@ to finish with a working, enjoyable game.
 
 6.  **Timeline of Activities**
 
-Change this to make it more accurate to what we did
+  --------------------------------------------------------------------------------
+  **Week**   **Tasks Completed**                                  **Programmer**
+  ---------- ---------------------------------------------------- ----------------
+  **Week 1** Defined core variables: player count, player         Ruhani
+             positions, spinner result, scores, and animations.   
+             Created the canvas and basic UI buttons for player   
+             count and spin action.                               
 
-Our actual thing ended up being more like this.
+  **Week 2** Created the game board and background elements,      Jolomi
+             including a sandy-colored board and light blue       
+             background.                                          
 
-Jolomi did Create the game board and background elements (sandy-colored
-board, light blue background) by jan 18
+  **Week 3** Designed and implemented player characters and their Ruhani
+             starting positions. Debugged crashing issues that    
+             occurred during the board setup.                     
 
-Ruhani debugged jolomis work when it started crashing
+  **Week 4** Developed the spinner mechanics and successfully     Ruhani
+             linked them to player movement across the board.     
 
-Ruhani did Design and implement players and their starting positions by
-jan 20
+  **Week 5** Implemented smooth player animations for movement    Jolomi
+             transitions on the board.                            
 
-Jan 20 ruhani Develop the spinner mechanics and link them to player
-movement
+  **Week 6** Designed and integrated action cards, including      Jolomi
+             visual design and applying game effects when drawn.  
 
-Develop the spinner mechanics and link them to player movement
+  **Week 7** Collaborated to brainstorm and finalize additional   Ruhani & Jolomi
+             improvements for smoother gameplay and better user   
+             experience.                                          
 
-Feb 18 Implement player animations for movement on the board jolomi
-
-Ruhani also did work on the action ards
-
-March beginning we both discussed things we should do further
-
-Idk make this into a timeline table thing. Below I have attached our
-original plan which you can use to format the final timeline.
-
-+-----------------------------------------+----------------+------------+
-| **Activity**                            | **Programmer** | **Start    |
-|                                         |                | Time**     |
-+:=======================================:+================+============+
-| Create the game board and background    | Jolomi         | January 16 |
-| elements (sandy-colored board, light    |                |            |
-| blue background)                        |                |            |
-+-----------------------------------------+----------------+------------+
-| Design and implement players and their  | Ruhani         | January 16 |
-| starting positions                      |                |            |
-+-----------------------------------------+----------------+------------+
-| Develop the spinner mechanics and link  | Ruhani         | January 16 |
-| them to player movement                 |                |            |
-+-----------------------------------------+----------------+------------+
-| Implement player animations for         | Jolomi         | January 21 |
-| movement on the board                   |                |            |
-+-----------------------------------------+----------------+------------+
-| Set up stop signs on the board where    | Jolomi         | January 21 |
-| players will land and stop              |                |            |
-+-----------------------------------------+----------------+------------+
-| Integrate background music and sound    | Jolomi         | January 21 |
-| effects for better immersion            |                |            |
-+-----------------------------------------+----------------+------------+
-| Design and implement the instructions   | Ruhani         | January 23 |
-| screen that appears at the beginning of |                |            |
-| the game                                |                |            |
-+-----------------------------------------+----------------+------------+
-| Make an animation/display for the end   | Jolomi         | January 28 |
-| of the game                             |                |            |
-+-----------------------------------------+----------------+------------+
-| Develop the animation for action cards, | Ruhani         | January 30 |
-| ensuring they are randomized and do not |                |            |
-| repeat                                  |                |            |
-+-----------------------------------------+----------------+------------+
-| Design visually appealing action cards  | Jolomi         | January 30 |
-| and their mechanics                     |                |            |
-+-----------------------------------------+----------------+------------+
-| Make action cards, with good design,    | Both           | February 6 |
-| and fun activities                      |                |            |
-+-----------------------------------------+----------------+------------+
-| Design and integrate mini-games that    | Both of us     | February   |
-| will appear within the action cards     | will make 1-2  | 13         |
-|                                         | each           |            |
-+-----------------------------------------+----------------+------------+
-| User testing and debugging (playtesting |   ------       |   -------  |
-| to ensure smooth gameplay and fix       |   Both         |   March    |
-| issues)                                 |   ------       |   11       |
-|                                         |                |   -------  |
-|                                         |   ------       |            |
-|                                         |                |   -------  |
-|                                         |                |            |
-|                                         |                |   --       |
-|                                         |                |            |
-|                                         |                |   --       |
-+-----------------------------------------+----------------+------------+
-| Final polish of game design, UI, and UX | Both           | March 18   |
-| improvements                            |                |            |
-+-----------------------------------------+----------------+------------+
-| Game launch and presentation            | Both           | March 18   |
-| preparation                             |                |            |
-+-----------------------------------------+----------------+------------+
-| Create the game board and background    | Jolomi         | January 16 |
-| elements (sandy-colored board, light    |                |            |
-| blue background)                        |                |            |
-+-----------------------------------------+----------------+------------+
+  **Week 8** Conducted final playtesting, identified bugs, and    Ruhani & Jolomi
+             polished animations and game flow.                   
+  --------------------------------------------------------------------------------
 
 7.  **Results**
+
+**a. How to Play BoardRush**
+
+• Setup: Choose 2 to 4 players, each with a unique colour, and everyone
+starts with 100 points.
+
+• Gameplay: On your turn, spin the spinner to move along the board. As
+you land on squares, keep an eye out for "STOP" these trigger either
+action or point cards
+
+• Action Cards tell you to move extra spaces, switch positions or even
+take another turn.
+
+• Point Cards adjust your score---some boost your points or double them,
+while others might knock points off. Your score never goes below zero.
+
+• Finishing: When you reach the final "FINISH" square, you're done.
+Finish order matters: the first player to finish earns 400 bonus points,
+the second 300, then 200, and 100 for last.
+
+**b. Results**
 
 We have made a fully functional board game where:
 
@@ -294,6 +255,10 @@ We achieved a functioning board game
 
 The introduction, what we wanted to achieve vs what we did achieve
 
+Fix minor bugs like the slight offset of the text align after restarting
+the game, and the action cards not always working. They approximately
+have an accuracy rate of 95%.
+
 9.  **External Materials (optional; if you use any)**
 
 **a. Development Tools:**
@@ -316,3 +281,781 @@ The introduction, what we wanted to achieve vs what we did achieve
 **10. Appendix (Provide the code developed for the project)**
 
 **Insert code here:**
+
+const squareSize = 60; // square size
+
+let numPlayers = 0; // number of players
+
+let currentPlayer = 0; // index of the current player
+
+let spinnerResult = 0; // spinner result
+
+let playerPositions = \[0, 0, 0, 0\]; // player positions
+
+let playerOffsets = \[
+
+{ x: 45, y: 45 },
+
+{ x: 15, y: 15 },
+
+{ x: 15, y: 45 },
+
+{ x: 45, y: 15 },
+
+\]; // offsets for players
+
+let actionCardVisible = false; // card visibility (action or point)
+
+let spinnerDisplay = \"\"; // spinner display
+
+let currentActionCard = \"\"; // current card text (action or point)
+
+let currentActionEffect = \"\"; // for action cards, store effect
+details
+
+let currentCardType = \"\"; // \"action\" or \"point\"
+
+let currentPointValue = 0; // holds the point value for point cards
+
+let animating = false; // track if animation is in progress
+
+let animationStep = 0; // current animation step
+
+let totalSteps = 0; // total steps to move based on spinner result
+
+let lastMoveFrame = 0; // track last move frame
+
+const animationSpeed = 15; // delay between moves
+
+let remainingSteps = 0; // steps remaining after landing on a stop tile
+
+let switchButtons = \[\]; // buttons for switch action
+
+let gameOver = false; // flag for game over
+
+const squares = \[
+
+{ x: 370, y: 50 }, { x: 310, y: 50 }, { x: 250, y: 50 }, { x: 190, y: 50
+},
+
+{ x: 130, y: 50 }, { x: 70, y: 50 }, { x: 10, y: 50 }, { x: 10, y: 110
+},
+
+{ x: 10, y: 170 }, { x: 70, y: 170 }, { x: 130, y: 170 }, { x: 190, y:
+170 },
+
+{ x: 250, y: 170 }, { x: 310, y: 170 }, { x: 370, y: 170 }, { x: 370, y:
+230 },
+
+{ x: 370, y: 290 }, { x: 310, y: 290 }, { x: 250, y: 290 }, { x: 190, y:
+290 },
+
+{ x: 130, y: 290 }, { x: 70, y: 290 }, { x: 10, y: 290 }
+
+\];
+
+const stopSquares = \[6, 12, 18\]; // positions that trigger a card
+
+const playerColors = \[\"blue\", \"red\", \"yellow\", \"green\"\];
+
+let playerScores = \[100, 100, 100, 100\]; // players start with 100
+points
+
+const actionCards = \[
+
+\"Move forward 2 spaces.\",
+
+\"Switch places with another player.\",
+
+\"Go back to start.\",
+
+\"Take another turn.\",
+
+\"Move backward 1 space.\",
+
+\];
+
+let finishedPlayers = \[\]; // Track indices of finished players
+
+function setup() {
+
+createCanvas(450, 400);
+
+// Removed single player option.
+
+let button2 = createButton(\"2 Players\").mousePressed(() =\>
+setPlayers(2)).position(90, 360);
+
+let button3 = createButton(\"3 Players\").mousePressed(() =\>
+setPlayers(3)).position(170, 360);
+
+let button4 = createButton(\"4 Players\").mousePressed(() =\>
+setPlayers(4)).position(250, 360);
+
+window.playerButtons = \[button2, button3, button4\];
+
+window.spinButton =
+createButton(\"Spin\").mousePressed(spinSpinner).position(375, 360);
+
+window.spinButton.hide();
+
+let scoresButton =
+createButton(\"Scores\").mousePressed(showScores).position(375, 20);
+
+}
+
+function draw() {
+
+if (gameOver) {
+
+drawGameOverScreen();
+
+return;
+
+}
+
+background(\"skyblue\");
+
+drawBoard();
+
+// Animate players.
+
+for (let i = 0; i \< numPlayers; i++) {
+
+let pos = playerPositions\[i\];
+
+// Only animate the current player if not finished.
+
+if (animating && i === currentPlayer) {
+
+let stepsLeft = totalSteps - animationStep;
+
+if (stepsLeft \> 0 && frameCount - lastMoveFrame \>= animationSpeed) {
+
+playerPositions\[i\] = Math.min(pos + 1, squares.length - 1);
+
+animationStep++;
+
+lastMoveFrame = frameCount;
+
+// If the player reaches the end, handle finish.
+
+if (playerPositions\[i\] === squares.length - 1) {
+
+handlePlayerFinish(i);
+
+return;
+
+}
+
+// When landing on a STOP square, freeze movement and show a card.
+
+if (stopSquares.includes(playerPositions\[i\])) {
+
+animating = false;
+
+remainingSteps = totalSteps - animationStep;
+
+showCard();
+
+return;
+
+}
+
+} else if (stepsLeft === 0) {
+
+animating = false;
+
+if (playerPositions\[i\] === squares.length - 1) {
+
+handlePlayerFinish(i);
+
+return;
+
+}
+
+if (stopSquares.includes(playerPositions\[i\])) {
+
+remainingSteps = 0;
+
+showCard();
+
+return;
+
+}
+
+advanceTurn();
+
+}
+
+}
+
+let { x, y } = squares\[pos\];
+
+let { x: offsetX, y: offsetY } = playerOffsets\[i\];
+
+fill(playerColors\[i\]);
+
+ellipse(x + offsetX, y + offsetY, 20, 20);
+
+}
+
+// Display spinner result.
+
+if (spinnerDisplay !== \"\") {
+
+fill(\"black\");
+
+textSize(32);
+
+text(spinnerDisplay, width / 2 - 20, height / 2);
+
+}
+
+// Display card (action or point) with a close \"X\" button.
+
+if (actionCardVisible) {
+
+fill(255);
+
+rect(150, 100, 150, 150);
+
+fill(0);
+
+textSize(16);
+
+text(\"Instructions\", 180, 120);
+
+textSize(14);
+
+text(currentActionCard, 160, 150, 130, 90);
+
+// Draw close \"X\" button.
+
+fill(200);
+
+rect(150 + 150 - 25, 100 + 5, 20, 20);
+
+fill(0);
+
+textSize(16);
+
+text(\"X\", 150 + 150 - 20, 100 + 20);
+
+}
+
+// Indicate current player\'s turn by color.
+
+fill(\"black\");
+
+textSize(16);
+
+text(\`Turn: \${playerColors\[currentPlayer\]}\`, 20, 370);
+
+}
+
+function drawGameOverScreen() {
+
+background(\"lightgreen\");
+
+fill(\"black\");
+
+textSize(28);
+
+textAlign(CENTER, CENTER);
+
+text(\"Congratulations!\", width / 2, 50);
+
+textSize(20);
+
+text(\"Leaderboard\", width / 2, 90);
+
+let leaderboard = \[\];
+
+for (let i = 0; i \< numPlayers; i++) {
+
+leaderboard.push({ color: playerColors\[i\], score: playerScores\[i\]
+});
+
+}
+
+leaderboard.sort((a, b) =\> b.score - a.score);
+
+textSize(18);
+
+let startY = 130;
+
+for (let i = 0; i \< leaderboard.length; i++) {
+
+let entry = leaderboard\[i\];
+
+text(\`\${i + 1}. \${entry.color} - \${entry.score} points\`, width / 2,
+startY + i \* 30);
+
+}
+
+textSize(16);
+
+text(\"Press SPACE to restart\", width / 2, height - 30);
+
+}
+
+function handlePlayerFinish(playerIndex) {
+
+if (!finishedPlayers.includes(playerIndex)) {
+
+finishedPlayers.push(playerIndex);
+
+let finishOrder = finishedPlayers.length;
+
+let finishPoints = \[400, 300, 200, 100\]\[finishOrder - 1\] \|\| 0;
+
+playerScores\[playerIndex\] += finishPoints;
+
+}
+
+if (finishedPlayers.length === numPlayers) {
+
+gameOver = true;
+
+window.spinButton.hide();
+
+} else {
+
+advanceTurn();
+
+}
+
+}
+
+function advanceTurn() {
+
+actionCardVisible = false;
+
+window.spinButton.show();
+
+do {
+
+currentPlayer = (currentPlayer + 1) % numPlayers;
+
+} while (finishedPlayers.includes(currentPlayer));
+
+if (finishedPlayers.length === numPlayers) {
+
+window.spinButton.hide();
+
+}
+
+}
+
+function setPlayers(players) {
+
+numPlayers = players;
+
+playerPositions.fill(0, 0, numPlayers);
+
+playerScores = new Array(numPlayers).fill(100);
+
+finishedPlayers = \[\];
+
+gameOver = false;
+
+window.playerButtons.forEach(button =\> button.hide());
+
+window.spinButton.show();
+
+}
+
+function spinSpinner() {
+
+spinnerResult = Math.floor(random(1, 7));
+
+spinnerDisplay = spinnerResult;
+
+totalSteps = spinnerResult;
+
+animating = true;
+
+animationStep = 0;
+
+lastMoveFrame = frameCount;
+
+setTimeout(() =\> spinnerDisplay = \"\", 1000);
+
+}
+
+function drawBoard() {
+
+strokeWeight(2);
+
+fill(246, 215, 176);
+
+stroke(62, 103, 214);
+
+squares.forEach((square) =\> {
+
+rect(square.x, square.y, squareSize, squareSize);
+
+});
+
+fill(\"black\");
+
+textSize(16);
+
+stopSquares.forEach(index =\> {
+
+let square = squares\[index\];
+
+text(\"STOP\", square.x + 10, square.y + 30);
+
+});
+
+textSize(16);
+
+text(\"START\", 375, 85);
+
+text(\"FINISH\", 15, 325);
+
+}
+
+function showScores() {
+
+let scoresMessage = \"Scores:\\n\";
+
+for (let i = 0; i \< numPlayers; i++) {
+
+scoresMessage += \`\${playerColors\[i\]}: \${playerScores\[i\]}
+points\\n\`;
+
+}
+
+alert(scoresMessage);
+
+}
+
+function showCard() {
+
+if (random(1) \< 0.5) {
+
+showPointCard();
+
+} else {
+
+showActionCard();
+
+}
+
+}
+
+function showActionCard() {
+
+currentCardType = \"action\";
+
+currentActionCard =
+actionCards\[Math.floor(random(actionCards.length))\];
+
+currentActionEffect = currentActionCard;
+
+actionCardVisible = true;
+
+window.spinButton.hide();
+
+if (currentActionEffect.includes(\"Switch places with another player\"))
+{
+
+createSwitchButtons();
+
+}
+
+}
+
+function showPointCard() {
+
+currentCardType = \"point\";
+
+const pointCards = \[50, 70, -30, -50, \"double\", \"half\"\];
+
+let card = pointCards\[Math.floor(random(pointCards.length))\];
+
+if (card === \"double\") {
+
+currentActionCard = \"Point card: Double your points.\";
+
+} else if (card === \"half\") {
+
+currentActionCard = \"Point card: Halve your points.\";
+
+} else if (card \>= 0) {
+
+currentActionCard = \"Point card: Gain \" + card + \" points.\";
+
+} else {
+
+currentActionCard = \"Point card: Lose \" + Math.abs(card) + \"
+points.\";
+
+}
+
+currentPointValue = card;
+
+actionCardVisible = true;
+
+window.spinButton.hide();
+
+}
+
+function createSwitchButtons() {
+
+switchButtons.forEach(button =\> button.remove());
+
+switchButtons = \[\];
+
+let buttonY = 220;
+
+for (let i = 0; i \< numPlayers; i++) {
+
+if (i !== currentPlayer && !finishedPlayers.includes(i)) {
+
+let button = createButton(\`Switch with \${playerColors\[i\]}\`);
+
+button.position(160, buttonY);
+
+button.mousePressed(() =\> {
+
+\[playerPositions\[currentPlayer\], playerPositions\[i\]\] =
+
+\[playerPositions\[i\], playerPositions\[currentPlayer\]\];
+
+switchButtons.forEach(b =\> b.remove());
+
+switchButtons = \[\];
+
+if (remainingSteps \> 0) {
+
+resumeMovement();
+
+} else {
+
+advanceTurn();
+
+}
+
+});
+
+switchButtons.push(button);
+
+buttonY += 30;
+
+}
+
+}
+
+let stayButton = createButton(\"Don\'t Switch\");
+
+stayButton.position(160, buttonY);
+
+stayButton.mousePressed(() =\> {
+
+switchButtons.forEach(b =\> b.remove());
+
+switchButtons = \[\];
+
+if (remainingSteps \> 0) {
+
+resumeMovement();
+
+} else {
+
+advanceTurn();
+
+}
+
+});
+
+switchButtons.push(stayButton);
+
+}
+
+function handleActionEffect() {
+
+if (currentActionEffect.includes(\"Move forward 2 spaces\")) {
+
+playerPositions\[currentPlayer\] =
+Math.min(playerPositions\[currentPlayer\] + 2, squares.length - 1);
+
+} else if (currentActionEffect.includes(\"Move backward 1 space\")) {
+
+playerPositions\[currentPlayer\] =
+Math.max(playerPositions\[currentPlayer\] - 1, 0);
+
+} else if (currentActionEffect.includes(\"Go back to start\")) {
+
+playerPositions\[currentPlayer\] = 0;
+
+} else if (currentActionEffect.includes(\"Take another turn\")) {
+
+spinSpinner();
+
+return;
+
+}
+
+if (remainingSteps \> 0) {
+
+resumeMovement();
+
+} else {
+
+advanceTurn();
+
+}
+
+}
+
+function handlePointCard() {
+
+if (currentPointValue === \"double\") {
+
+playerScores\[currentPlayer\] \*= 2;
+
+} else if (currentPointValue === \"half\") {
+
+playerScores\[currentPlayer\] = Math.floor(playerScores\[currentPlayer\]
+/ 2);
+
+} else {
+
+playerScores\[currentPlayer\] += currentPointValue;
+
+if (playerScores\[currentPlayer\] \< 0) {
+
+playerScores\[currentPlayer\] = 0;
+
+}
+
+}
+
+if (remainingSteps \> 0) {
+
+resumeMovement();
+
+} else {
+
+advanceTurn();
+
+}
+
+}
+
+function resumeMovement() {
+
+animating = true;
+
+totalSteps = remainingSteps;
+
+animationStep = 0;
+
+lastMoveFrame = frameCount;
+
+remainingSteps = 0;
+
+}
+
+function mousePressed() {
+
+if (actionCardVisible) {
+
+let cardX = 150, cardY = 100, cardWidth = 150, cardHeight = 150;
+
+let closeX = cardX + cardWidth - 25;
+
+let closeY = cardY + 5;
+
+let closeWidth = 20, closeHeight = 20;
+
+if (mouseX \>= closeX && mouseX \<= closeX + closeWidth &&
+
+mouseY \>= closeY && mouseY \<= closeY + closeHeight) {
+
+dismissCard();
+
+}
+
+}
+
+}
+
+function dismissCard() {
+
+actionCardVisible = false;
+
+switchButtons.forEach(button =\> button.remove());
+
+switchButtons = \[\];
+
+if (currentCardType === \"point\") {
+
+handlePointCard();
+
+} else {
+
+if (currentActionEffect.includes(\"Switch places with another player\"))
+{
+
+if (remainingSteps \> 0) {
+
+resumeMovement();
+
+} else {
+
+advanceTurn();
+
+}
+
+} else {
+
+handleActionEffect();
+
+}
+
+}
+
+}
+
+// Restart the game when spacebar is pressed at game over.
+
+function keyPressed() {
+
+if (gameOver && key === \' \') {
+
+restartGame();
+
+}
+
+}
+
+function restartGame() {
+
+// Reset game variables while keeping the same number of players.
+
+textAlign(LEFT, CENTER);
+
+playerPositions = new Array(numPlayers).fill(0);
+
+playerScores = new Array(numPlayers).fill(100);
+
+finishedPlayers = \[\];
+
+currentPlayer = 0;
+
+gameOver = false;
+
+animating = false;
+
+actionCardVisible = false;
+
+remainingSteps = 0;
+
+window.spinButton.show();
+
+}
