@@ -63,8 +63,8 @@ movement, but action cards determine overall success.
 
 By drawing inspiration from *The Game of Life's* turn-based structure,
 chance-based movement, and event-driven spaces, our game aims to provide
-an engaging and interactive experience while introducing dynamic
-mini-games and animations to set it apart.
+an engaging and interactive experience while introducing dynamic action
+cards and animations to set it apart.
 
 **b. Second Related Work/Inspiration:** Monopoly
 
@@ -97,7 +97,7 @@ for an engaging and competitive gameplay experience.
 By drawing inspiration from Monopoly's turn-based mechanics, action
 spaces, and money-based scoring system, our game seeks to create an
 exciting and interactive experience while introducing fresh elements
-such as animated movement and mini-games to differentiate itself.
+such as animated movement and action cards to differentiate itself.
 
 3.  **Problem Statement**
 
@@ -132,8 +132,8 @@ experience.
 **c. Currency & Score Tracking System**
 
 A point or currency system has been implemented to reward players based
-on their mini-game performance. This system allows players to accumulate
-points, which plays a key role in determining the game's winner.
+on their action cards. This system allows players to accumulate points,
+which plays a key role in determining the game's winner.
 
 **d. Game Conclusion & Winner Determination**
 
@@ -159,14 +159,16 @@ leading to clashes between our code when integrating different parts.
 This resulted in constant debugging every time a new component was
 added, slowing down our progress. Debugging became one of the most
 time-consuming parts of our work. Eventually, we had to simplify our
-original concept, removing mini-games and focusing on making the core
-board game functional and fun. We experimented with ideas like
+original game concept, removing mini-games and focusing on making the
+core board game functional and fun. We experimented with ideas like
 integrating a snake-style mini-game but decided against it after
 realizing it would require more lines of code than the main game itself.
 In the end, we kept action cards with different types --- point cards,
 automated movement cards, and more --- to keep gameplay interesting
 without overcomplicating development. Despite the setbacks, we managed
 to finish with a working, enjoyable game.
+
+**\**
 
 6.  **Timeline of Activities**
 
@@ -207,22 +209,22 @@ to finish with a working, enjoyable game.
 
 **a. How to Play BoardRush**
 
-• Setup: Choose 2 to 4 players, each with a unique colour, and everyone
-starts with 100 points.
+- Setup: Choose 2 to 4 players, each with a unique colour, and everyone
+  starts with 100 points.
 
-• Gameplay: On your turn, spin the spinner to move along the board. As
-you land on squares, keep an eye out for "STOP" these trigger either
-action or point cards
+- Gameplay: On your turn, spin the spinner to move along the board. As
+  you land on squares, keep an eye out for "STOP." These trigger either
+  action or point cards.
 
-• Action Cards tell you to move extra spaces, switch positions or even
-take another turn.
+- Action Cards tell you to move extra spaces, switch positions or even
+  take another turn.
 
-• Point Cards adjust your score---some boost your points or double them,
-while others might knock points off. Your score never goes below zero.
+- Point Cards adjust your score---some boost your points or double them,
+  while others might knock points off. Your score never goes below zero.
 
-• Finishing: When you reach the final "FINISH" square, you're done.
-Finish order matters: the first player to finish earns 400 bonus points,
-the second 300, then 200, and 100 for last.
+- Finishing: When you reach the final "FINISH" square, you're done.
+  Finish order matters: the first player to finish earns 400 bonus
+  points, the second 300, then 200, and 100 for last.
 
 **b. Results**
 
@@ -247,19 +249,26 @@ We have made a fully functional board game where:
 By implementing this project, we have demonstrated our understanding of
 what we have learned in our DMII class.
 
-8.  **Conclusions and Future Work - J**
+8.  **Conclusions and Future Work**
 
-Options for our future work are more games
+We ended up creating a list of all the essential features and elements
+we wanted in the game, and from there, we took turns tackling different
+tasks. One major obstacle was that our coding styles differed
+significantly, leading to clashes between our code when integrating
+different parts. This resulted in constant debugging every time a new
+component was added, slowing down our progress. Eventually, we had to
+simplify our original concept, removing mini-games and focusing on
+making the core board game functional and fun. We experimented with
+ideas like integrating a snake-style mini-game but decided against it
+after realizing it would require more lines of code than the main game
+itself. In the end, we kept action cards with different types --- point
+cards, automated movement cards, and more --- to keep gameplay
+interesting without overcomplicating development. Despite the setbacks,
+we managed to finish with a working, enjoyable game. In the future we
+could work on fully expanding on our original idea of having mini-games
+within our board game and fully achieving what was in out original plan
 
-We achieved a functioning board game
-
-The introduction, what we wanted to achieve vs what we did achieve
-
-Fix minor bugs like the slight offset of the text align after restarting
-the game, and the action cards not always working. They approximately
-have an accuracy rate of 95%.
-
-9.  **External Materials (optional; if you use any)**
+9.  **External Materials**
 
 **a. Development Tools:**
 
@@ -279,8 +288,6 @@ have an accuracy rate of 95%.
   not be sufficient for this project.
 
 **10. Appendix (Provide the code developed for the project)**
-
-**Insert code here:**
 
 const squareSize = 60; // square size
 
