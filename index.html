@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DMII Board Game</title>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.3/lib/p5.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #1a1a2e;
+    }
+  </style>
+</head>
+<body>
+  <script>
+const squareSize = 60;
+
+let numPlayers = 0;
+let currentPlayer = 0;
+let spinnerResult = 0;
+let playerPositions = [0, 0, 0, 0];
+let targetPositions = [0, 0, 0, 0];
+let playerOffsets = [
+  { x: 45, y: 45 },
+  { x: 15, y: 15 },
+  { x: 15, y: 45 },
+  { x: 45, y: 15 },
+];
+let actionCardVisible = false;
+let actionCardText = "";
+let spinnerDisplay = "";
+let animating = false;
+let animationStep = 0;
+let totalSteps = 0;
+let lastMoveFrame = 0;
+let frameDelay = 15;
+
+const actionCards = [
+  "Move forward 2 spaces!",
+  "Go back 1 space!",
+  "Skip your next turn!",
+  "Swap places with a player!",
+  "Spin again!",
+];
+
+const squares = [
+  { x: 370, y: 50 }, { x: 310, y: 50 }, { x: 250, y: 50 }, { x: 190, y: 50 },
+  { x: 130, y: 50 }, { x: 70, y: 50 },  { x: 10, y: 50 },  { x: 10, y: 110 },
+  { x: 10, y: 170 }, { x: 70, y: 170 }, { x: 130, y: 170 }, { x: 190, y: 170 },
+  { x: 250, y: 170 }, { x: 310, y: 170 }, { x: 370, y: 170 }, { x: 370, y: 230 },
+  { x: 370, y: 290 }, { x: 310, y: 290 }, { x: 250, y: 290 }, { x: 190, y: 290 },
+  { x: 130, y: 290 }, { x: 70, y: 290 },  { x: 10, y: 290 },
+];
+
+const playerColors = ["blue", "red", "yellow", "green"];
+
+function setup() {
+  createCanvas(450, 400);
+
+  let button1 = createButton("1 Player");
+  button1.mousePressed(() => setPlayers(1));
+  button1.position(20, 360);
+
+  let button2 = createButton("2 Players");
+  button2.mousePressed(() => setPlayers(2));
+  button2.position(90, 360);
+
+  let button3 = createButton("3 Players");
+  button3.mousePressed(() => setPlayers(3));
+  button3.position(170, 360);
+
+  let button4 = createButton("4 Players");
+  button4.mousePressed(() => setPlayers(4));
+  button4.position(250, 360);
+
+  window.playerButtons = [button1, button2, button3, button4];
+
+  let spinButton = createButton("Spin");
+  spinButton.mousePressed(spinSpinner);
+  spinButton.position(375, 360);
+}
+
+function draw() {
+  background("skyblue");
+  drawBoard();
+
+  for (let i = 0; i < numPlayers; i++) {
+    let pos = playerPositions[i];
+
+    if (animating && i === currentPlayer && frameCount - lastMoveFrame > frameDelay) {
+      if (animationStep < totalSteps) {
+        playerPositions[i] = (pos + 1) % squares.length;
+        animationStep++;
+        lastMoveFrame = frameCount;
+      } else {
+        animating = false;
+      }
+    }
+
+    let x = squares[pos].x;
+    let y = squares[pos].y;
+    let offsetX = playerOffsets[i].x;
+    let offsetY = playerOffsets[i].y;
+    fill(playerColors[i]);
+    ellipse(x + offsetX, y + offsetY, 20, 20);
+  }
+
+  if (spinnerDisplay !== "") {
+    fill("black");
+    textSize(32);
+    text(spinnerDisplay, width / 2 - 20, height / 2);
+  }
+
+  if (actionCardVisible) {
+    drawActionCard();
+  }
+
+  noStroke();
+  fill("black");
+  text("START", 375, 85);
+  text("FINISH", 15, 325);
+
+  textSize(16);
+  if (numPlayers > 0) {
+    text(`Player ${currentPlayer + 1} / ${playerColors[currentPlayer]}`, 20, 370);
+  }
+}
+
+function drawActionCard() {
+  fill(255, 255, 200);
+  stroke(0);
+  strokeWeight(3);
+  rect(125, 90, 200, 120, 15);
+  fill(0);
+  textSize(20);
+  textAlign(CENTER, CENTER);
+  text("Action Card", 225, 110);
+  textSize(16);
+  text(actionCardText, 225, 150);
+  noStroke();
+  fill(0, 0, 0, 50);
+  rect(130, 95, 200, 120, 15);
+}
+
+function setPlayers(players) {
+  numPlayers = players;
+  playerPositions.fill(0, 0, numPlayers);
+  targetPositions.fill(0, 0, numPlayers);
+  window.playerButtons.forEach((button) => button.hide());
+}
+
+function spinSpinner() {
+  spinnerResult = Math.floor(random(1, 7));
+  spinnerDisplay = spinnerResult;
+
+  let newPos = playerPositions[currentPlayer] + spinnerResult;
+  if (newPos >= squares.length) {
+    newPos = squares.length - 1;
+  }
+
+  targetPositions[currentPlayer] = newPos;
+  totalSteps = spinnerResult;
+  animating = true;
+  animationStep = 0;
+  lastMoveFrame = frameCount;
+
+  if (newPos % 3 === 0 || Math.random() < 0.5) {
+    actionCardVisible = true;
+    actionCardText = random(actionCards);
+    setTimeout(() => { actionCardVisible = false; }, 2500);
+  }
+
+  currentPlayer = (currentPlayer + 1) % numPlayers;
+  setTimeout(() => { spinnerDisplay = ""; }, 1000);
+}
+
+function drawBoard() {
+  strokeWeight(2);
+  fill(246, 215, 176);
+  stroke(62, 103, 214);
+  squares.forEach((square) => {
+    rect(square.x, square.y, squareSize, squareSize);
+  });
+}
+  </script>
+</body>
+</html>
